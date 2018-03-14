@@ -93,7 +93,7 @@ void setup() {
   
 
      
-      
+  pinMode(13, OUTPUT);  
   Serial.begin(57600);
   Serial.println("EL-Client starting!");
 
