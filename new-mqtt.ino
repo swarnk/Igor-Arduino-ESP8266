@@ -73,11 +73,13 @@ void mqttData(void* response) {
      {
      digitalWrite(13,HIGH);
         mqtt.publish("/hello/world/led", "Led is on!");
+        Serial.println("LED is off now!");
      }
      else
      {
      digitalWrite(13,LOW);
         mqtt.publish("/hello/world/led", "Led is off!");
+        Serial.println("LED is on now!");
      }
 
   mqtt.publish("/hello/world/reaction", "GOT SIGNAL!!!");
