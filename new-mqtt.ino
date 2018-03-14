@@ -69,13 +69,15 @@ void mqttData(void* response) {
      //pinMode(13, OUTPUT);// устанавливаем ножку 13(светодиод) как выход 
      //boolean LampRED=0;//устанавлиаваем лампочку в негорящую позицию 
      //data=int(data);
-     if(data=="1")
+     if(data == "1")
      {
      digitalWrite(13,HIGH);
+        mqtt.publish("/hello/world/led", "Led is on!");
      }
      else
      {
      digitalWrite(13,LOW);
+        mqtt.publish("/hello/world/led", "Led is off!");
      }
 
   mqtt.publish("/hello/world/reaction", "GOT SIGNAL!!!");
