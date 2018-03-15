@@ -140,6 +140,7 @@ void loop() {
      int temp;
      temp = analogRead(15);     
      Serial.println("SENSOR VALUE:"); Serial.println(temp);
+     delay(500);
      mqtt.publish("/home/watertemp", temp);
 
     last = millis();
