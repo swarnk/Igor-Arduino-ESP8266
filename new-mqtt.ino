@@ -147,6 +147,11 @@ void loop() {
                 
     uint32_t t = cmd.GetTime();
     Serial.print("Time: "); Serial.println(t);
+     
+     // Опрашиваем датчик температуры на 15 пине.
+     val = analogRead(15);     
+     Serial.println(val);
+     mqtt.publish("/home/watertemp", val);
 
     last = millis();
   }
