@@ -138,9 +138,10 @@ void loop() {
      
    
      int temperature;
-     temperature = analogRead(15);     
+     temperature = analogRead(15);
+     String myString = String(temperature);
 //     Serial.println("SENSOR VALUE:"); Serial.println(temp);
-       mqtt.publish("/home/water", temperature);
+       mqtt.publish("/home/water", myString);
 
     last = millis();
   }
