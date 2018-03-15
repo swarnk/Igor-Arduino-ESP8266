@@ -36,9 +36,6 @@ void mqttConnected(void* response) {
   Serial.println("MQTT connected!");
 //  mqtt.subscribe("/esp-link/1");
    mqtt.subscribe("/hello/world/test");
-   //mqtt.subscribe("/igor/home/hall/hallsensor1");
-   //mqtt.subscribe("/igor/home/kitchen/kitchensensor1");
-   //mqtt.subscribe("/igor/home/door/doorsensor1");
    connected = true;
 }
 
@@ -61,9 +58,7 @@ void mqttData(void* response) {
   Serial.println(data);
   
      
-     //pinMode(13, OUTPUT);// устанавливаем ножку 13(светодиод) как выход 
-     //boolean LampRED=0;//устанавлиаваем лампочку в негорящую позицию 
-     //data=int(data);
+ /* 
      if(data == "1")
      {
      digitalWrite(13,HIGH);
@@ -76,8 +71,8 @@ void mqttData(void* response) {
         mqtt.publish("/hello/world/led", "Led is off!");
         Serial.println("LED is on now!");
      }
-
-  mqtt.publish("/hello/world/reaction", "GOT SIGNAL!!!");
+*/
+  
 }
 
 void mqttPublished(void* response) {
