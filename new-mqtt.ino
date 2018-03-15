@@ -57,6 +57,7 @@ void mqttData(void* response) {
   String data = res->popString();
   Serial.println(data);
   
+  analogWrite(17,125);
      
  /* 
      if(data == "1")
@@ -85,6 +86,7 @@ void setup() {
      
   pinMode(13, OUTPUT);
   pinMode(15, INPUT);
+  pinMode(17, OUTPUT);
   Serial.begin(57600);
   Serial.println("EL-Client starting!");
 
