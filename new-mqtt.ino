@@ -57,22 +57,22 @@ void mqttData(void* response) {
   String data = res->popString();
   Serial.println(data);
   
-  analogWrite(17,125);
+  
      
- /* 
+  
      if(data == "1")
      {
-     digitalWrite(13,HIGH);
-        mqtt.publish("/hello/world/led", "Led is on!");
-        Serial.println("LED is off now!");
+     analogWrite(17,125);
+     mqtt.publish("/hello/world/led", "Led is on!");
+     Serial.println("LED is off now!");
      }
      else
      {
-     digitalWrite(13,LOW);
-        mqtt.publish("/hello/world/led", "Led is off!");
-        Serial.println("LED is on now!");
+       analogWrite(17,0);
+       mqtt.publish("/hello/world/led", "Led is off!");
+       Serial.println("LED is on now!");
      }
-*/
+
   
 }
 
