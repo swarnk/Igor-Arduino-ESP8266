@@ -152,7 +152,7 @@ void loop() {
      // Опрашиваем датчик температуры на 15 пине.
      int temp;
      temp = analogRead(15);     
-     Serial.println(temp);
+     Serial.println("SENSOR VALUE:", temp);
      mqtt.publish("/home/watertemp", temp);
 
     last = millis();
