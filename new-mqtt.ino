@@ -1,12 +1,6 @@
-/**
- * Simple example to demo the esp-link MQTT client
- */
-
 #include <ELClient.h>
 #include <ELClientCmd.h>
 #include <ELClientMqtt.h>
-
-   
 
 // Initialize a connection to esp-link using the normal hardware serial port both for
 // SLIP and for debug messages.
@@ -41,13 +35,11 @@ bool connected;
 void mqttConnected(void* response) {
   Serial.println("MQTT connected!");
 //  mqtt.subscribe("/esp-link/1");
-  mqtt.subscribe("/hello/world/test");
-  mqtt.subscribe("/igor/home/hall/hallsensor1");
+   mqtt.subscribe("/hello/world/test");
+   mqtt.subscribe("/igor/home/hall/hallsensor1");
    mqtt.subscribe("/igor/home/kitchen/kitchensensor1");
    mqtt.subscribe("/igor/home/door/doorsensor1");
-  //mqtt.subscribe("/esp-link/2", 1);
-  //mqtt.publish("/esp-link/0", "test1");
-  connected = true;
+   connected = true;
 }
 
 // Callback when MQTT is disconnected
