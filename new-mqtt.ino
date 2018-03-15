@@ -44,7 +44,7 @@ void mqttConnected(void* response) {
   mqtt.subscribe("/hello/world/test");
   mqtt.subscribe("/igor/home/hall/hallsensor1");
    mqtt.subscribe("/igor/home/kitchen/kitchensensor1");
-   mqtt.subscribe("/igor/home/door/doorsensor1")'
+   mqtt.subscribe("/igor/home/door/doorsensor1");
   //mqtt.subscribe("/esp-link/2", 1);
   //mqtt.publish("/esp-link/0", "test1");
   connected = true;
