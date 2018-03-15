@@ -142,9 +142,11 @@ void loop() {
      //int temperature;
      //temperature = analogRead(15);
      //String myString = String(temperature);
-    char msgBuffer[5];           
-    float testFloat = AnalogRead(15);
-    mqtt.publish("/home/water", dtostrf(testFloat, 3, 0, msgBuffer));
+   
+    
+    //char msgBuffer[5];           
+    //float testFloat = AnalogRead(15);
+    //mqtt.publish("/home/water", dtostrf(testFloat, 3, 0, msgBuffer));
     
     //char temperature[ ] = "23";
       //     Serial.println("SENSOR VALUE:"); Serial.println(temp);
