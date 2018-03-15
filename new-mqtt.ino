@@ -129,8 +129,8 @@ void loop() {
     itoa(count++, buf, 10);
     mqtt.publish("/esp-link/1", buf);
 
-    itoa(count+99, buf, 10);
-    mqtt.publish("/hello/world/arduino", buf);
+    //itoa(count+99, buf, 10);
+    //mqtt.publish("/hello/world/arduino", buf);
     
                 
     uint32_t t = cmd.GetTime();
