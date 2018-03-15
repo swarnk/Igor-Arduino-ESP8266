@@ -123,8 +123,8 @@ void loop() {
   esp.Process();
 
   if (connected && (millis()-last) > 4000) {
-    Serial.println("publishing");
-    char buf[12];
+//    Serial.println("publishing");
+//    char buf[12];
 
 //    itoa(count++, buf, 10);
 //    mqtt.publish("/esp-link/1", buf);
@@ -133,15 +133,14 @@ void loop() {
     //mqtt.publish("/hello/world/arduino", buf);
     
                 
-    uint32_t t = cmd.GetTime();
-    Serial.print("Time: "); Serial.println(t);
+ //   uint32_t t = cmd.GetTime();
+ //   Serial.print("Time: "); Serial.println(t);
      
-     // Опрашиваем датчик температуры на 15 пине.
-     int temp;
-     temp = analogRead(15);     
+   
+     int temperature;
+     temperature = analogRead(15);     
 //     Serial.println("SENSOR VALUE:"); Serial.println(temp);
-     delay(500);
-     mqtt.publish("/home/watertemp", temp);
+       mqtt.publish("/home/water", temperature);
 
     last = millis();
   }
