@@ -36,9 +36,9 @@ void mqttConnected(void* response) {
   Serial.println("MQTT connected!");
 //  mqtt.subscribe("/esp-link/1");
    mqtt.subscribe("/hello/world/test");
-   mqtt.subscribe("/igor/home/hall/hallsensor1");
-   mqtt.subscribe("/igor/home/kitchen/kitchensensor1");
-   mqtt.subscribe("/igor/home/door/doorsensor1");
+   //mqtt.subscribe("/igor/home/hall/hallsensor1");
+   //mqtt.subscribe("/igor/home/kitchen/kitchensensor1");
+   //mqtt.subscribe("/igor/home/door/doorsensor1");
    connected = true;
 }
 
