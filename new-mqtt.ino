@@ -98,6 +98,7 @@ void setup() {
      
   pinMode(13, OUTPUT);
   pinMode(15, INPUT);
+   int temp=0;
   Serial.begin(57600);
   Serial.println("EL-Client starting!");
 
@@ -150,9 +151,9 @@ void loop() {
     Serial.print("Time: "); Serial.println(t);
      
      // Опрашиваем датчик температуры на 15 пине.
-     val = analogRead(15);     
-     Serial.println(val);
-     mqtt.publish("/home/watertemp", val);
+     temp = analogRead(15);     
+     Serial.println(temp);
+     mqtt.publish("/home/watertemp", temp);
 
     last = millis();
   }
