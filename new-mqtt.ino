@@ -63,14 +63,15 @@ void mqttData(void* response) {
      if(data == "1")
      {
      analogWrite(17,125);
-     mqtt.publish("/hello/world/led", "Led is on!");
-     Serial.println("LED is off now!");
-     }
+       Serial.println("SIGNAL ON 17 PIN IS 2.5 VOLTS");
+          mqtt.publish("/hello/world/led", "Led is on!");
+          }
      else
      {
        analogWrite(17,0);
+       Serial.println("SIGNAL ON 17 PIN IS 0 VOLTS.");
        mqtt.publish("/hello/world/led", "Led is off!");
-       Serial.println("LED is on now!");
+       Serial.println("LED is off now!");
      }
 
   
