@@ -62,14 +62,14 @@ void mqttData(void* response) {
   
      if(data == "1")
      {
-     analogWrite(17,125);
-       Serial.println("SIGNAL ON 17 PIN IS 2.5 VOLTS");
+     analogWrite(10,125);
+       Serial.println("SIGNAL ON 10 PIN IS 2.5 VOLTS");
           mqtt.publish("/hello/world/led", "Led is on!");
           }
      else
      {
-       analogWrite(17,0);
-       Serial.println("SIGNAL ON 17 PIN IS 0 VOLTS.");
+       analogWrite(10,0);
+       Serial.println("SIGNAL ON 10 PIN IS 0 VOLTS.");
        mqtt.publish("/hello/world/led", "Led is off!");
        Serial.println("LED is off now!");
      }
@@ -87,7 +87,7 @@ void setup() {
      
   pinMode(13, OUTPUT);
   pinMode(15, INPUT);
-  pinMode(17, OUTPUT);
+  pinMode(10, OUTPUT);
   Serial.begin(57600);
   Serial.println("EL-Client starting!");
 
