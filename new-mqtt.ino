@@ -57,6 +57,7 @@ void mqttData(void* response) {
   String data = res->popString();
   Serial.println(data);
   
+ int data = data.toInt();
  analogWrite(10,data);
      
   
