@@ -57,10 +57,10 @@ void mqttData(void* response) {
   String data = res->popString();
   Serial.println(data);
   
-  
+ analogWrite(10,data) 
      
   
-     if(data == "1")
+/*     if(data == "1")
      {
      analogWrite(10,125);
        Serial.println("SIGNAL ON 10 PIN IS 2.5 VOLTS");
@@ -73,7 +73,7 @@ void mqttData(void* response) {
        mqtt.publish("/hello/world/led", "Led is off!");
        Serial.println("LED is off now!");
      }
-
+*/
   
 }
 
