@@ -9,7 +9,7 @@ ELClient esp(&Serial, &Serial);
 // Initialize CMD client (for GetTime)
 ELClientCmd cmd(&esp);
 
-// Initialize the MQTT client
+// Инициализация MQTT клиента
 ELClientMqtt mqtt(&esp);
 
 // Callback made from esp-link to notify of wifi status changes
