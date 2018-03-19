@@ -39,7 +39,7 @@ void mqttConnected(void* response) {
    connected = true;
 }
 
-// Callback when MQTT is disconnected
+// Подпрограмма, вызываемая, когда MQTT клиент разъединяется
 void mqttDisconnected(void* response) {
   Serial.println("MQTT disconnected");
   connected = false;
