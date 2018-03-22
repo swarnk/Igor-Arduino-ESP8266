@@ -1,3 +1,5 @@
+// со встроенной библиотекой pubsub этот скетч не захотел работать.
+// используем библиотеку загруженную с https://github.com/Imroy/pubsubclient
 // Светодиод подлкючен к 5 пину
 // Датчик температуры ds18b20 к 2 пину
 
@@ -10,13 +12,13 @@
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
-const char *ssid = "AIRPORT"; // Имя вайфай точки доступа
-const char *pass = "PASSWORD"; // Пароль от точки доступа
+const char *ssid = "LeN"; // Имя вайфай точки доступа
+const char *pass = "20858500000sen"; // Пароль от точки доступа
 
-const char *mqtt_server = "server"; // Имя сервера MQTT
-const int mqtt_port = 11140; // Порт для подключения к серверу MQTT
-const char *mqtt_user = "Login"; // Логи от сервер
-const char *mqtt_pass = "Pass"; // Пароль от сервера
+const char *mqtt_server = "sutulo.com"; // Имя сервера MQTT
+const int mqtt_port = 1883; // Порт для подключения к серверу MQTT
+const char *mqtt_user = ""; // Логи от сервер
+const char *mqtt_pass = ""; // Пароль от сервера
 
 #define BUFFER_SIZE 100
 
