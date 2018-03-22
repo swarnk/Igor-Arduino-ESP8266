@@ -1,3 +1,5 @@
+// Этот скетч я взял по этому адресу
+// https://raw.githubusercontent.com/knolleary/pubsubclient/master/examples/mqtt_esp8266/mqtt_esp8266.ino
 /*
  Basic ESP8266 MQTT example
 
@@ -28,9 +30,9 @@
 
 // Update these with values suitable for your network.
 
-const char* ssid = "........";
+const char* ssid = "Len";
 const char* password = "........";
-const char* mqtt_server = "broker.mqtt-dashboard.com";
+const char* mqtt_server = "sutulo.com";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
