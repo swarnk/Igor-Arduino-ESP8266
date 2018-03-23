@@ -31,7 +31,7 @@
 // Update these with values suitable for your network.
 
 const char* ssid = "Len";
-const char* password = "........";
+const char* password = "20858500000sen";
 const char* mqtt_server = "sutulo.com";
 
 WiFiClient espClient;
