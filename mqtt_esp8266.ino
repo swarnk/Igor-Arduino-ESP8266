@@ -28,7 +28,7 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-// Update these with values suitable for your network.
+// Настройки реквизитов домашней WIFI сети и основного MQTT сервера
 
 const char* ssid = "Len";
 const char* password = "20858500000sen";
@@ -43,26 +43,28 @@ int value = 0;
 void setup_wifi() {
 
   delay(10);
-  // We start by connecting to a WiFi network
+  // Начало подключения к WIFI сети
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
 
   WiFi.begin(ssid, password);
 
+ //Цикл подключения к WIFI сети. Печатаем в консоль точку и ждем 1/2 секунды, до тех пор, пока не поменяется статус на WL_CONNECTED
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
 
   randomSeed(micros());
-
+// Завершающая стадия подключения. Вывод в консоль статуса подключения и назначенного ESP8266 ip адреса
   Serial.println("");
   Serial.println("WiFi connected");
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 }
 
+// Выполняется, когда приходит сообщение в топик, на который мы подписаны
 void callback(char* topic, byte* payload, unsigned int length) {
   Serial.print("Message arrived [");
   Serial.print(topic);
@@ -96,7 +98,7 @@ void reconnect() {
       // Once connected, publish an announcement...
       client.publish("outTopic", "hello world");
       // ... and resubscribe
-      client.subscribe("inTopic");
+      client.subscribe("inTopic"); // Здесь задается топик, за которым мы ведем наблюдение
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -108,10 +110,10 @@ void reconnect() {
 }
 
 void setup() {
-  pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
-  Serial.begin(115200);
-  setup_wifi();
-  client.setServer(mqtt_server, 1883);
+  pinMode(BUILTIN_LED, OUTPUT);     // Инициализация выхода встроенного светодиода (BUILTIN_LED) как выхода
+  Serial.begin(115200); // Настройка скорости Serial Console
+  setup_wifi(); // Выполнение подключения к WIFI сети
+  client.setServer(mqtt_server, 1883); // Установка соединиения с MQTT сервером на заданном порту
   client.setCallback(callback);
 }
 
@@ -127,8 +129,8 @@ void loop() {
     lastMsg = now;
     ++value;
     snprintf (msg, 75, "hello world #%ld", value);
-    Serial.print("Publish message: ");
-    Serial.println(msg);
-    client.publish("outTopic", msg);
+    Serial.print("Publish message: "); // Публикуем сообщение в Serial Console
+    Serial.println(msg); // Печать пустой строки в Serial Console
+    client.publish("outTopic", msg); // Публикуем сообщение на MQTT сервере
   }
 }
